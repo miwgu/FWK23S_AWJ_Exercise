@@ -18,7 +18,8 @@ function MyNav() {
             navbarScroll
           >
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
+            <Nav.Link href="/xssattack">XSS</Nav.Link>
+            <Nav.Link href="/csp">CSP</Nav.Link>
             <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
