@@ -4,8 +4,24 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useNavigate } from 'react-router-dom';
+import fakeAuth from '../../utils/fakeAuth';
+import { useEffect, useState } from 'react';
 
 function MyNav() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const navigate = useNavigate();
+  useEffect(() => {
+    setIsAuthenticated(fakeAuth.isAuthenticated);
+  });
+
+/*   const logout = () => {
+    fakeAuth.signOut(() => {
+      // Redirect to home page after logout
+      navigate('/');
+    });
+  }; */
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary" fixed="top">
       <Container fluid>
@@ -21,7 +37,9 @@ function MyNav() {
             <Nav.Link href="/xssattack">XSS</Nav.Link>
             <Nav.Link href="/csp">CSP</Nav.Link>
             <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+            {!fakeAuth.isAuthenticated ?<NavDropdown.Item href="/login">Login</NavDropdown.Item >: <NavDropdown.Item href="/">Logout</NavDropdown.Item > }
+              <NavDropdown.Item href="/xssattack">XSS</NavDropdown.Item>
+              <NavDropdown.Item href="/csp">CSP</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
                 Another action
               </NavDropdown.Item>

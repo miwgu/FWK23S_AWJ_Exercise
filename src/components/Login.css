@@ -1,0 +1,14 @@
+/* Ensure the form is centered */
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    background-color: rgb(246, 242, 242);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Ensure labels are left-aligned */
+  .left-label {
+    text-align: left !important;
+  }

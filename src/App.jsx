@@ -4,6 +4,10 @@ import './App.css'
 import MyNav from './components/nav/MyNav';
 import XssAttack from './components/XssAttack';
 import Csp from './components/Csp';
+import Home from './components/Home';
+import Login from './components/Login';
+import ProtectedRouth from './utils/ProtectedRouth';
+
 
 function App() {
 
@@ -11,9 +15,13 @@ function App() {
     <>
       <MyNav />
       <Routes>
-        <Route path='/' element={<XssAttack/>} />
-        <Route path='/xssattack' element={<XssAttack/>} />
-        <Route path='/csp' element={<Csp/>} />
+        <Route path='/' element={<Home/>} />
+        <Route path='/login' element={<Login/>}/>
+
+        <Route element={<ProtectedRouth />}>
+          <Route path='/xssattack' element={<XssAttack/>} />
+          <Route path='/csp' element={<Csp/>} />
+        </Route>
         
       </Routes>
     </>
