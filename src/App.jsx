@@ -6,7 +6,7 @@ import XssAttack from './components/XssAttack';
 import Csp from './components/Csp';
 import Home from './components/Home';
 import Login from './components/Login';
-import ProtectedRouth from './utils/ProtectedRouth';
+import ProtectedRoute from './utils/ProtectedRoute';
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <Route path='/' element={<Home/>} />
         <Route path='/login' element={<Login/>}/>
 
-        <Route element={<ProtectedRouth />}>
+        <Route element={<ProtectedRoute />}>
           <Route path='/xssattack' element={<XssAttack/>} />
           <Route path='/csp' element={<Csp/>} />
         </Route>

@@ -10,7 +10,7 @@ import fakeAuth from './fakeAuth';
  * @returns JSX element
  */
 
-const ProtectedRouth = () => (
+const ProtectedRoute = () => (
     fakeAuth.isAuthenticated ?(
         <Outlet /> 
     ):(
@@ -18,4 +18,4 @@ const ProtectedRouth = () => (
     )
 );
 
-export default ProtectedRouth
+export default ProtectedRoute
